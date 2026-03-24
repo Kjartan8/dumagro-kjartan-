@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-lime: #8BC34A;
+  --color-lime-dark: #6B9B2A;
+  --color-lime-light: #A4D65E;
+  --color-dark: #0A0A0A;
+  --color-dark-light: #1A1A1A;
+  --color-dark-lighter: #2A2A2A;
+  --color-background: #0A0A0A;
+  --color-foreground: #FFFFFF;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--color-dark);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node:*)",
+      "Bash(npx --version)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm view:*)",
+      "WebSearch",
+      "Bash(yes:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(timeout 15 npm run dev)"
+    ]
+  }
+}

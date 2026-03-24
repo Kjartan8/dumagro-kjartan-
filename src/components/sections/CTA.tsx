@@ -22,22 +22,19 @@ const roadmapSteps = [
     title: "Gratis plaatsbezoek",
     description: "Wij analyseren de situatie ter plaatse en geven gericht advies.",
     highlight: false,
-  }, // 🔥 DEZE WAS VERGETEN
-
+  },
   {
     icon: FileText,
     title: "Offerte op maat",
     description: "U ontvangt een helder en transparant prijsvoorstel zonder verrassingen.",
     highlight: false,
-  }, // 🔥 DEZE OOK
-
+  },
   {
     icon: HardHat,
     title: "Uitvoering werken",
     description: "De werken worden strak gepland en professioneel uitgevoerd.",
     highlight: false,
   },
-
   {
     icon: BadgeCheck,
     title: "Oplevering & tevredenheid",

@@ -16,7 +16,7 @@ export const navLinks = [
 
 // ── Hero ────────────────────────────────────────────────────
 export const heroContent = {
-  headline: "Uw Partner voor Grondwerken & Afbraak",
+  headline: "Grond- & Afbraakwerken",
   subheadline:
     "Dumagro staat garant voor vakmanschap, veiligheid en efficiëntie bij elk project. Van grondverzet tot sloop — wij leveren kwaliteit.",
   ctaPrimary: "Plan uw afspraak",
@@ -60,7 +60,7 @@ export const services: Service[] = [
 // ── About ───────────────────────────────────────────────────
 export const aboutContent = {
   title: "Over Dumagro",
-  subtitle: "8 jaar ervaring in grond- & afbraakwerken",
+  subtitle: "+8 jaar ervaring in grond- & afbraakwerken",
   paragraphs: [
     "Dumagro is meer dan een uitvoerder — het is het werk van een vakman met passie voor grond- en afbraakwerken.",
     "Zaakvoerder Mathias staat zelf mee op de werf en volgt elk project van dichtbij op.",

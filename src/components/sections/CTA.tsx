@@ -21,17 +21,17 @@ const roadmapSteps = [
     icon: MapPinned,
     title: "Gratis plaatsbezoek",
     description: "Wij analyseren de situatie ter plaatse en geven gericht advies.",
-  },
+  },highlight: false,
   {
     icon: FileText,
     title: "Offerte op maat",
     description: "U ontvangt een helder en transparant prijsvoorstel zonder verrassingen.",
-  },
+  },highlight: false,
   {
     icon: HardHat,
     title: "Uitvoering werken",
     description: "De werken worden strak gepland en professioneel uitgevoerd.",
-  },
+  },highlight: false,
   {
     icon: BadgeCheck,
     title: "Oplevering & tevredenheid",
@@ -86,7 +86,7 @@ export default function CTA() {
                   <article
                     key={step.title}
                     className={`relative rounded-2xl border p-5 md:p-4 transition-all duration-300 hover:-translate-y-1 hover:border-lime/50 hover:shadow-[0_10px_30px_rgba(139,195,74,0.12)] ${
-                      step.highlight
+                      step.highlight ?? false
                         ? "bg-lime/10 border-lime/60"
                         : "bg-dark border-white/10"
                     }`}
@@ -94,7 +94,7 @@ export default function CTA() {
                     <div className="flex md:flex-col items-start md:items-center gap-4 md:gap-3">
                       <div
                         className={`relative z-10 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center border ${
-                          step.highlight
+                          step.highlight ?? false
                             ? "bg-lime text-dark border-lime"
                             : "bg-dark-light text-lime border-white/15"
                         }`}

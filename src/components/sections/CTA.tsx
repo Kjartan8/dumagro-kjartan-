@@ -21,28 +21,33 @@ const roadmapSteps = [
     icon: MapPinned,
     title: "Gratis plaatsbezoek",
     description: "Wij analyseren de situatie ter plaatse en geven gericht advies.",
-  },highlight: false,
+    highlight: false,
+  }, // 🔥 DEZE WAS VERGETEN
+
   {
     icon: FileText,
     title: "Offerte op maat",
     description: "U ontvangt een helder en transparant prijsvoorstel zonder verrassingen.",
-  },highlight: false,
+    highlight: false,
+  }, // 🔥 DEZE OOK
+
   {
     icon: HardHat,
     title: "Uitvoering werken",
     description: "De werken worden strak gepland en professioneel uitgevoerd.",
-  },highlight: false,
+    highlight: false,
+  },
+
   {
     icon: BadgeCheck,
     title: "Oplevering & tevredenheid",
     description: "Wij leveren kwaliteit af met focus op een tevreden eindresultaat.",
+    highlight: false,
   },
 ] as const;
-
 export default function CTA() {
   return (
     <section className="py-20 md:py-28 bg-dark-light relative overflow-hidden">
-      {/* Subtle texture */}
       <div className="absolute inset-0 opacity-[0.08]">
         <div
           className="absolute inset-0"
@@ -54,7 +59,6 @@ export default function CTA() {
         />
       </div>
 
-      {/* Construction accent */}
       <div className="pointer-events-none absolute -right-10 top-12 hidden lg:block">
         <div className="relative">
           <div className="absolute top-8 right-0 h-px w-40 bg-lime/30" />
@@ -73,20 +77,18 @@ export default function CTA() {
           </p>
 
           <div className="relative">
-            {/* Mobile connector */}
             <div className="absolute left-6 top-4 bottom-4 w-px bg-white/15 md:hidden" />
-
-            {/* Desktop connector */}
             <div className="hidden md:block absolute left-[10%] right-[10%] top-[2.9rem] h-px bg-white/15" />
 
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-4">
               {roadmapSteps.map((step) => {
                 const Icon = step.icon;
+
                 return (
                   <article
                     key={step.title}
                     className={`relative rounded-2xl border p-5 md:p-4 transition-all duration-300 hover:-translate-y-1 hover:border-lime/50 hover:shadow-[0_10px_30px_rgba(139,195,74,0.12)] ${
-                      step.highlight ?? false
+                      step.highlight
                         ? "bg-lime/10 border-lime/60"
                         : "bg-dark border-white/10"
                     }`}
@@ -94,7 +96,7 @@ export default function CTA() {
                     <div className="flex md:flex-col items-start md:items-center gap-4 md:gap-3">
                       <div
                         className={`relative z-10 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center border ${
-                          step.highlight ?? false
+                          step.highlight
                             ? "bg-lime text-dark border-lime"
                             : "bg-dark-light text-lime border-white/15"
                         }`}

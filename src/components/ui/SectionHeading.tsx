@@ -2,6 +2,7 @@ interface SectionHeadingProps {
   title: string;
   subtitle?: string;
   light?: boolean;
+  centered?: boolean;
 }
 
 export default function SectionHeading({

@@ -28,7 +28,7 @@ export default function Hero() {
       />
       <motion.div
         aria-hidden
-        className="absolute top-2/3 right-1/4 w-[260px] h-[260px] rounded-full bg-white/[0.02] blur-[80px] pointer-events-none"
+        className="absolute top-2/3 right-1/4 w-[260px] h-[260px] rounded-full bg-lime/[0.04] blur-[80px] pointer-events-none"
         animate={{ scale: [1, 1.1, 1], x: [0, 16, 0], y: [0, -14, 0] }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 6 }}
       />
@@ -43,10 +43,10 @@ export default function Hero() {
           <span className="inline-block text-lime text-sm font-semibold uppercase tracking-widest mb-6">
             Grond- &amp; Afbraakwerken
           </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight mb-6 max-w-4xl mx-auto">
             {heroContent.headline}
           </h1>
-          <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-black/60 max-w-2xl mx-auto mb-10">
             {heroContent.subheadline}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -66,7 +66,7 @@ export default function Hero() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <ChevronDown className="w-6 h-6 text-white/40" />
+        <ChevronDown className="w-6 h-6 text-black/40" />
       </motion.div>
 
       {/* Green wave divider */}
@@ -85,7 +85,7 @@ export default function Hero() {
           />
           <path
             d="M0 60C240 80 480 40 720 60C960 80 1200 40 1440 60V80H0V60Z"
-            fill="#0A0A0A"
+            fill="#F7F8FA"
           />
         </svg>
       </div>

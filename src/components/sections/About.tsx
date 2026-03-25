@@ -22,7 +22,7 @@ export default function About() {
           <ScrollReveal direction="left">
             <div className="space-y-6">
               {aboutContent.paragraphs.map((p, i) => (
-                <p key={i} className="text-white/70 leading-relaxed text-lg">
+                <p key={i} className="text-black/70 leading-relaxed text-lg">
                   {p}
                 </p>
               ))}
@@ -31,7 +31,7 @@ export default function About() {
                 {aboutContent.values.map((value) => (
                   <div key={value} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-lime shrink-0" />
-                    <span className="text-white font-medium">{value}</span>
+                    <span className="text-black font-medium">{value}</span>
                   </div>
                 ))}
               </div>
@@ -41,7 +41,7 @@ export default function About() {
           {/* Visual placeholder */}
           <ScrollReveal direction="right">
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-lime/20 to-dark-lighter border border-white/10 overflow-hidden">
+              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-lime/20 to-dark-lighter border border-black/10 overflow-hidden">
                 <div className="absolute inset-1 rounded-xl overflow-hidden">
                   <Image
                     src="/ChatGPT%20Image%2024%20mrt%202026%2C%2011_02_19.png"

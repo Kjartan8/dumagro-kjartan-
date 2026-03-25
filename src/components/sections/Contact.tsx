@@ -68,7 +68,8 @@ export default function Contact() {
         <ScrollReveal>
           <SectionHeading
             title="Plan uw afspraak"
-            subtitle="Kies een beschikbare datum en tijdslot en bezorg ons uw gegevens."
+            subtitle="Kies een beschikbare datum en tijdslot en bezorg ons uw gegevens, of bel gerust op onderstaand nummer."
+            centered
           />
         </ScrollReveal>
 
@@ -80,7 +81,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="naam"
-                    className="block text-sm font-medium text-white/80 mb-2"
+                    className="block text-sm font-medium text-black/80 mb-2"
                   >
                     Naam *
                   </label>
@@ -89,14 +90,14 @@ export default function Contact() {
                     id="naam"
                     name="naam"
                     required
-                    className="w-full px-4 py-3 bg-dark-light border border-white/10 rounded-lg text-white placeholder:text-white/30 focus:outline-none focus:border-lime transition-colors"
+                    className="w-full px-4 py-3 bg-dark-light border border-black/10 rounded-lg text-black placeholder:text-black/30 focus:outline-none focus:border-lime transition-colors"
                     placeholder="Uw naam"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="adres"
-                    className="block text-sm font-medium text-white/80 mb-2"
+                    className="block text-sm font-medium text-black/80 mb-2"
                   >
                     Adres *
                   </label>
@@ -105,7 +106,7 @@ export default function Contact() {
                     id="adres"
                     name="adres"
                     required
-                    className="w-full px-4 py-3 bg-dark-light border border-white/10 rounded-lg text-white placeholder:text-white/30 focus:outline-none focus:border-lime transition-colors"
+                    className="w-full px-4 py-3 bg-dark-light border border-black/10 rounded-lg text-black placeholder:text-black/30 focus:outline-none focus:border-lime transition-colors"
                     placeholder="Straat en nummer"
                   />
                 </div>
@@ -115,7 +116,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="telefoon"
-                    className="block text-sm font-medium text-white/80 mb-2"
+                    className="block text-sm font-medium text-black/80 mb-2"
                   >
                     Telefoon *
                   </label>
@@ -124,14 +125,14 @@ export default function Contact() {
                     id="telefoon"
                     name="telefoon"
                     required
-                    className="w-full px-4 py-3 bg-dark-light border border-white/10 rounded-lg text-white placeholder:text-white/30 focus:outline-none focus:border-lime transition-colors"
+                    className="w-full px-4 py-3 bg-dark-light border border-black/10 rounded-lg text-black placeholder:text-black/30 focus:outline-none focus:border-lime transition-colors"
                     placeholder="Uw telefoonnummer"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-white/80 mb-2"
+                    className="block text-sm font-medium text-black/80 mb-2"
                   >
                     E-mail *
                   </label>
@@ -140,7 +141,7 @@ export default function Contact() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 bg-dark-light border border-white/10 rounded-lg text-white placeholder:text-white/30 focus:outline-none focus:border-lime transition-colors"
+                    className="w-full px-4 py-3 bg-dark-light border border-black/10 rounded-lg text-black placeholder:text-black/30 focus:outline-none focus:border-lime transition-colors"
                     placeholder="uw@email.be"
                   />
                 </div>
@@ -149,7 +150,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="dienst"
-                  className="block text-sm font-medium text-white/80 mb-2"
+                  className="block text-sm font-medium text-black/80 mb-2"
                 >
                   Geleverde diensten *
                 </label>
@@ -159,7 +160,7 @@ export default function Contact() {
                   required
                   value={selectedService}
                   onChange={(e) => setSelectedService(e.target.value)}
-                  className="w-full px-4 py-3 bg-dark-light border border-white/10 rounded-lg text-white focus:outline-none focus:border-lime transition-colors"
+                  className="w-full px-4 py-3 bg-dark-light border border-black/10 rounded-lg text-black focus:outline-none focus:border-lime transition-colors"
                 >
                   <option value="">Selecteer een dienst</option>
                   {serviceOptions.map((service) => (
@@ -171,7 +172,7 @@ export default function Contact() {
               </div>
 
               <div className="space-y-4">
-                <p className="block text-sm font-medium text-white/80">
+                <p className="block text-sm font-medium text-black/80">
                   Beschikbare data (demo)
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -188,7 +189,7 @@ export default function Contact() {
                         className={`px-3 py-2 rounded-lg border text-sm transition-colors ${
                           isActive
                             ? "bg-lime/15 border-lime text-lime"
-                            : "bg-dark-light border-white/10 text-white/80 hover:border-lime/50"
+                            : "bg-dark-light border-black/10 text-black/80 hover:border-lime/50"
                         }`}
                       >
                         {date}
@@ -197,7 +198,7 @@ export default function Contact() {
                   })}
                 </div>
 
-                <p className="block text-sm font-medium text-white/80">
+                <p className="block text-sm font-medium text-black/80">
                   Beschikbare uren (demo)
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -212,7 +213,7 @@ export default function Contact() {
                           className={`px-3 py-2 rounded-lg border text-sm transition-colors ${
                             isActive
                               ? "bg-lime/15 border-lime text-lime"
-                              : "bg-dark-light border-white/10 text-white/80 hover:border-lime/50"
+                              : "bg-dark-light border-black/10 text-black/80 hover:border-lime/50"
                           }`}
                         >
                           {time}
@@ -220,7 +221,7 @@ export default function Contact() {
                       );
                     })
                   ) : (
-                    <p className="text-white/50 text-sm col-span-full">
+                    <p className="text-black/50 text-sm col-span-full">
                       Kies eerst een datum om beschikbare uren te zien.
                     </p>
                   )}
@@ -231,7 +232,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="opmerkingen"
-                    className="block text-sm font-medium text-white/80 mb-2"
+                    className="block text-sm font-medium text-black/80 mb-2"
                   >
                     Extra opmerkingen
                   </label>
@@ -239,7 +240,7 @@ export default function Contact() {
                     id="opmerkingen"
                     name="opmerkingen"
                     rows={4}
-                    className="w-full px-4 py-3 bg-dark-light border border-white/10 rounded-lg text-white placeholder:text-white/30 focus:outline-none focus:border-lime transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-dark-light border border-black/10 rounded-lg text-black placeholder:text-black/30 focus:outline-none focus:border-lime transition-colors resize-none"
                     placeholder="Extra informatie over uw project of voorkeuren..."
                   />
                 </div>
@@ -257,21 +258,21 @@ export default function Contact() {
             </form>
 
             {bookingData && (
-              <div className="mt-6 bg-dark-light border border-white/10 rounded-xl p-6 space-y-3">
-                <h4 className="text-white font-semibold">Uw afspraakaanvraag</h4>
-                <p className="text-sm text-white/80">Naam: {bookingData.naam}</p>
-                <p className="text-sm text-white/80">Adres: {bookingData.adres}</p>
-                <p className="text-sm text-white/80">
+              <div className="mt-6 bg-dark-light border border-black/10 rounded-xl p-6 space-y-3">
+                <h4 className="text-black font-semibold">Uw afspraakaanvraag</h4>
+                <p className="text-sm text-black/80">Naam: {bookingData.naam}</p>
+                <p className="text-sm text-black/80">Adres: {bookingData.adres}</p>
+                <p className="text-sm text-black/80">
                   Telefoon: {bookingData.telefoon}
                 </p>
-                <p className="text-sm text-white/80">E-mail: {bookingData.email}</p>
-                <p className="text-sm text-white/80">
+                <p className="text-sm text-black/80">E-mail: {bookingData.email}</p>
+                <p className="text-sm text-black/80">
                   Dienst: {bookingData.dienst}
                 </p>
-                <p className="text-sm text-white/80">
+                <p className="text-sm text-black/80">
                   Moment: {bookingData.datum} om {bookingData.uur}
                 </p>
-                <p className="text-sm text-white/80">
+                <p className="text-sm text-black/80">
                   Opmerkingen: {bookingData.opmerkingen || "Geen opmerkingen"}
                 </p>
               </div>
@@ -280,8 +281,8 @@ export default function Contact() {
 
           {/* Contact info sidebar */}
           <ScrollReveal direction="right" className="lg:col-span-2">
-            <div className="bg-dark-light border border-white/10 rounded-2xl p-6 md:p-8 space-y-6">
-              <h3 className="text-xl font-bold text-white mb-4">
+            <div className="bg-dark-light border border-black/10 rounded-2xl p-6 md:p-8 space-y-6">
+              <h3 className="text-xl font-bold text-black mb-4">
                 Contactgegevens
               </h3>
               {contactDetails.map((item) => (
@@ -290,8 +291,8 @@ export default function Contact() {
                     <item.icon className="w-5 h-5 text-lime" />
                   </div>
                   <div>
-                    <p className="text-white/50 text-sm">{item.label}</p>
-                    <p className="text-white font-medium">{item.value}</p>
+                    <p className="text-black/50 text-sm">{item.label}</p>
+                    <p className="text-black font-medium">{item.value}</p>
                   </div>
                 </div>
               ))}

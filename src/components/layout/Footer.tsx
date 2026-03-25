@@ -40,14 +40,14 @@ const socialIcons: Record<string, React.ComponentType<{ className?: string }>> =
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-light border-t border-white/10">
+    <footer className="bg-black border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Logo + description */}
           <div className="sm:col-span-2 lg:col-span-1">
             <a href="#" className="inline-block mb-4">
               <Image
-                src="/B222DAB8-2BC8-49DF-9441-58F11272E8D8-removebg-preview.png"
+                src="/att-removebg-preview.png"
                 alt="Dumagro logo"
                 width={720}
                 height={236}
@@ -65,7 +65,7 @@ export default function Footer() {
                     key={link.label}
                     href={link.href}
                     aria-label={link.label}
-                    className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-lime/20 transition-colors"
+                    className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-lime/20 transition-colors"
                   >
                     {Icon && <Icon className="w-5 h-5 text-white/70" />}
                   </a>
@@ -136,13 +136,13 @@ export default function Footer() {
       </div>
 
       {/* Copyright bar */}
-      <div className="border-t border-white/5">
+      <div className="bg-black border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-white/30 text-sm">
+          <p className="text-white/50 text-sm">
             &copy; {new Date().getFullYear()} Dumagro. Alle rechten
             voorbehouden.
           </p>
-          <p className="text-white/30 text-sm">
+          <p className="text-white/50 text-sm">
             Grond- &amp; Afbraakwerken
           </p>
         </div>

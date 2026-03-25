@@ -25,7 +25,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 className="object-cover"
                 sizes="(max-width: 640px) 100vw, 50vw"
               />
-              <span className="absolute top-3 left-3 px-2 py-1 rounded-md bg-dark/70 text-white text-xs font-medium">
+              <span className="absolute top-3 left-3 px-2 py-1 rounded-md bg-black/65 text-white text-xs font-medium">
                 Voor
               </span>
             </div>
@@ -37,7 +37,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 className="object-cover"
                 sizes="(max-width: 640px) 100vw, 50vw"
               />
-              <span className="absolute top-3 right-3 px-2 py-1 rounded-md bg-lime/80 text-dark text-xs font-semibold">
+              <span className="absolute top-3 right-3 px-2 py-1 rounded-md bg-lime/80 text-black text-xs font-semibold">
                 Na
               </span>
             </div>
@@ -50,7 +50,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         )}
 
         {/* Hover overlay */}
-        <div className="absolute inset-0 bg-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
+        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
           <span className="text-lime text-sm font-semibold uppercase tracking-wider mb-2">
             {project.category}
           </span>

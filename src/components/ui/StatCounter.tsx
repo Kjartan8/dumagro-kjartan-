@@ -37,11 +37,11 @@ export default function StatCounter({ stat }: StatCounterProps) {
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
+      <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-2">
         {count}
         <span className="text-lime">{stat.suffix}</span>
       </div>
-      <p className="text-white/70 text-sm md:text-base uppercase tracking-wider">
+      <p className="text-black/70 text-sm md:text-base uppercase tracking-wider">
         {stat.label}
       </p>
     </div>

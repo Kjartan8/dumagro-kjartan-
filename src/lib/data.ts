@@ -27,33 +27,56 @@ export const heroContent = {
 export interface Service {
   icon: LucideIcon;
   title: string;
-  description: string;
+  description: string[];
 }
 
 export const services: Service[] = [
   {
     icon: Shovel,
     title: "Grondwerken",
-    description:
-      "Uitgraven van funderingen, kleine graafwerken, tuinen uitgraven en nivelleren, voorbereiding van opritten en terrassen, bouwgrond bouwklaar maken en egaliseren van terrein.",
+    description: [
+      "Uitgraven van funderingen",
+      "Kleine graafwerken",
+      "Tuinen uitgraven en nivelleren",
+      "Voorbereiding van opritten en terrassen",
+      "Bouwgrond bouwklaar maken",
+      "Egaliseren van terrein",
+    ],
   },
   {
     icon: Building2,
     title: "Afbraakwerken",
-    description:
-      "Afbraak van huizen, bijgebouwen, garages, terrassen, opritten, tuinhuizen en schuren, inclusief kleine en middelgrote sloopwerken en selectieve afbraak met materiaalsortering.",
+    description: [
+      "Afbraak van huizen",
+      "Afbraak van bijgebouwen",
+      "Afbraak van garages",
+      "Afbraak van terrassen en opritten",
+      "Afbraak van tuinhuizen en schuren",
+      "Kleine en middelgrote sloopwerken",
+      "Selectieve afbraak met materiaalsortering",
+    ],
   },
   {
     icon: Mountain,
     title: "Tuin- en terreinwerken",
-    description:
-      "Tuin uitgraven en heraanleggen, boomstronken verwijderen en grachten uitgraven voor een verzorgd en functioneel terrein.",
+    description: [
+      "Tuin uitgraven",
+      "Tuin heraanleggen",
+      "Boomstronken verwijderen",
+      "Grachten uitgraven",
+      "Terrein verzorgd en functioneel aanleggen",
+    ],
   },
   {
     icon: Droplets,
     title: "Rioleringswerken",
-    description:
-      "Plaatsen van riolering, sleuven graven voor leidingen, regenwaterafvoer plaatsen, drainage uitvoeren en herstellingen van riolering.",
+    description: [
+      "Plaatsen van riolering",
+      "Sleuven graven voor leidingen",
+      "Regenwaterafvoer plaatsen",
+      "Drainage uitvoeren",
+      "Herstellingen van riolering",
+    ],
   },
 ];
 

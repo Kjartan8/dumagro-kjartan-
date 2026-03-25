@@ -65,17 +65,17 @@ export default function CTA() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center mb-4">
             Klaar om te starten met uw project?
           </h2>
-          <p className="text-white/60 text-center text-lg mb-12 max-w-3xl mx-auto">
+          <p className="text-black/60 text-center text-lg mb-12 max-w-3xl mx-auto">
             Een duidelijk stappenplan voor een vlotte samenwerking van eerste
             afspraak tot oplevering.
           </p>
 
           <div className="relative">
-            <div className="absolute left-6 top-4 bottom-4 w-px bg-white/15 md:hidden" />
-            <div className="hidden md:block absolute left-[10%] right-[10%] top-[2.9rem] h-px bg-white/15" />
+            <div className="absolute left-6 top-4 bottom-4 w-px bg-black/12 md:hidden" />
+            <div className="hidden md:block absolute left-[10%] right-[10%] top-[2.9rem] h-px bg-black/12" />
 
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-4">
               {roadmapSteps.map((step) => {
@@ -87,25 +87,25 @@ export default function CTA() {
                     className={`relative rounded-2xl border p-5 md:p-4 transition-all duration-300 hover:-translate-y-1 hover:border-lime/50 hover:shadow-[0_10px_30px_rgba(139,195,74,0.12)] ${
                       step.highlight
                         ? "bg-lime/10 border-lime/60"
-                        : "bg-dark border-white/10"
+                        : "bg-dark border-black/10"
                     }`}
                   >
                     <div className="flex md:flex-col items-start md:items-center gap-4 md:gap-3">
                       <div
                         className={`relative z-10 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center border ${
                           step.highlight
-                            ? "bg-lime text-dark border-lime"
-                            : "bg-dark-light text-lime border-white/15"
+                            ? "bg-lime text-black border-lime"
+                            : "bg-dark-light text-lime border-black/15"
                         }`}
                       >
                         <Icon className="w-6 h-6" />
                       </div>
 
                       <div className="md:text-center">
-                        <h3 className="text-white font-semibold text-base leading-tight">
+                        <h3 className="text-black font-semibold text-base leading-tight">
                           {step.title}
                         </h3>
-                        <p className="text-white/60 text-sm mt-2 leading-relaxed">
+                        <p className="text-black/60 text-sm mt-2 leading-relaxed">
                           {step.description}
                         </p>
                       </div>

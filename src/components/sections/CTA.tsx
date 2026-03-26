@@ -14,7 +14,7 @@ const roadmapSteps = [
   {
     icon: CalendarCheck2,
     title: "Plan uw afspraak",
-    description: "Kies eenvoudig online uw gewenst moment voor een eerste contact.",
+    description: "Neem contact op via telefoon of e-mail en wij plannen samen een moment in.",
     highlight: true,
   },
   {

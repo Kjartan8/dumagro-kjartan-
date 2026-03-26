@@ -51,7 +51,7 @@ export default function Footer() {
                 alt="Dumagro logo"
                 width={720}
                 height={236}
-                className="h-28 w-auto"
+                className="h-48 w-auto"
               />
             </a>
             <p className="text-white/50 text-sm leading-relaxed">

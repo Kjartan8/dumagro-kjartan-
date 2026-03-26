@@ -37,10 +37,11 @@ export const services: Service[] = [
     description: [
       "Uitgraven van funderingen",
       "Kleine graafwerken",
-      "Tuinen uitgraven en nivelleren",
       "Voorbereiding van opritten en terrassen",
       "Bouwgrond bouwklaar maken",
       "Egaliseren van terrein",
+      "Uitgraven van zwembaden of vijvers",
+      "Plaatsen van boordstenen",
     ],
   },
   {
@@ -48,12 +49,11 @@ export const services: Service[] = [
     title: "Afbraakwerken",
     description: [
       "Afbraak van huizen",
-      "Afbraak van bijgebouwen",
       "Afbraak van garages",
-      "Afbraak van terrassen en opritten",
-      "Afbraak van tuinhuizen en schuren",
       "Kleine en middelgrote sloopwerken",
-      "Selectieve afbraak met materiaalsortering",
+      "Afbraak van bedrijfsgebouwen en loodsen",
+      "Uitbreken oude funderingen en kelders",
+      "Uitschieten van beton en betonvloeren",
     ],
   },
   {
@@ -62,7 +62,7 @@ export const services: Service[] = [
     description: [
       "Tuin uitgraven",
       "Tuin heraanleggen",
-      "Boomstronken verwijderen",
+      "Boomstronken en struiken verwijderen",
       "Grachten uitgraven",
       "Terrein verzorgd en functioneel aanleggen",
     ],
@@ -73,9 +73,11 @@ export const services: Service[] = [
     description: [
       "Plaatsen van riolering",
       "Sleuven graven voor leidingen",
-      "Regenwaterafvoer plaatsen",
       "Drainage uitvoeren",
       "Herstellingen van riolering",
+      "Plaatsen en/of scheiden van regenwater en afvalwater",
+      "Plaatsen van septische en regenwaterputten",
+      "Plaatsen van inspectieputten",
     ],
   },
 ];
@@ -105,6 +107,7 @@ export interface Project {
   gradient: string;
   beforeImage?: string;
   afterImage?: string;
+  description?: string;
 }
 
 export const projects: Project[] = [
@@ -114,6 +117,8 @@ export const projects: Project[] = [
     gradient: "from-dark-lighter to-dark-light",
     beforeImage: "/IMG_1406.jpeg",
     afterImage: "/IMG_1411.jpeg",
+    description:
+      "Bij deze klant hebben we het perceel volledig voorbereid voor een prachtig eindresultaat. We hebben de bestaande graszode verwijderd, het terrein opgehoogd en daarna zorgvuldig geëgaliseerd en genivelleerd. Het resultaat is een strak en vlak oppervlak, klaar voor verdere aanleg of beplanting.",
   },
   {
     title: "Demo Project 1",
@@ -155,26 +160,16 @@ export const testimonials: Testimonial[] = [
     name: "Claire",
     company: "Particuliere Klant",
   },
-  {
-    quote:
-      "De afbraakwerken werden veilig en efficiënt uitgevoerd, volledig binnen het afgesproken budget. Wij werken graag opnieuw samen.",
-    name: "Marie Claes",
-    company: "Claes & Partners",
-  },
-  {
-    quote:
-      "Van offerte tot oplevering verliep alles vlekkeloos. Het team van Dumagro denkt mee en komt met praktische oplossingen.",
-    name: "Peter Willems",
-    company: "Willems Vastgoed",
-  },
 ];
 
 // ── Contact ─────────────────────────────────────────────────
 export const contactInfo = {
+  name: "Mathias Dumortier",
+  btw: "BE1031394466",
   address: "Rekestraat 19, 8840 Staden",
-  phone: "0491298984",
+  phone: "+32 491/29.89.84",
   email: "info@dumagro.be",
-  hours: "Ma - Vr: 07:00 - 17:00",
+  hours: "Ma - Za: 07:00 - 18:30",
 };
 
 export const serviceOptions = [

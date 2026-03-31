@@ -12,7 +12,7 @@ export default function Services() {
         <ScrollReveal>
           <SectionHeading
             title="Onze Diensten"
-            subtitle="Van grondverzet tot sloop — wij bieden een volledig pakket aan diensten voor uw bouwproject."
+            subtitle="Van grondverzet tot sloop — wij bieden een volledig pakket aan diensten in Staden, Roeselare, Kortrijk, Ieper, Diksmuide en omgeving."
           />
         </ScrollReveal>
 

@@ -45,7 +45,7 @@ export default function Navbar() {
             alt="Dumagro logo"
             width={800}
             height={262}
-            className="h-44 md:h-52 w-auto"
+            className="h-36 md:h-44 w-auto"
             priority
           />
         </a>

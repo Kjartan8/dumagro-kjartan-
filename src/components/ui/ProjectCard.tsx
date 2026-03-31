@@ -3,13 +3,175 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { X, ZoomIn } from "lucide-react";
+import { X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import type { Project } from "@/lib/data";
 import ScrollReveal from "./ScrollReveal";
 
 interface ProjectCardProps {
   project: Project;
   index: number;
+}
+
+interface CarouselModalProps {
+  project: Project;
+  startIndex: number;
+  onClose: () => void;
+}
+
+function CarouselModal({ project, startIndex, onClose }: CarouselModalProps) {
+  const [visible, setVisible] = useState(false);
+  const [current, setCurrent] = useState(startIndex);
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef<number | null>(null);
+  const images = project.images!;
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setVisible(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") handleClose();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    };
+    document.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [current]);
+
+  const handleClose = () => {
+    setVisible(false);
+    setTimeout(onClose, 250);
+  };
+
+  const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
+  const next = () => setCurrent((c) => (c + 1) % images.length);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+    touchStartX.current = null;
+  };
+
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (e.target === overlayRef.current) handleClose();
+  };
+
+  const img = images[current];
+
+  return createPortal(
+    <div
+      ref={overlayRef}
+      onClick={handleOverlayClick}
+      className={`fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 transition-all duration-250 ${
+        visible ? "bg-black/85 backdrop-blur-sm" : "bg-black/0"
+      }`}
+    >
+      <div
+        className={`relative w-full max-w-3xl bg-white rounded-2xl overflow-hidden shadow-2xl transition-all duration-250 ${
+          visible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}
+      >
+        {/* Close button */}
+        <button
+          onClick={handleClose}
+          className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/70 hover:bg-black flex items-center justify-center transition-colors"
+          aria-label="Sluiten"
+        >
+          <X className="w-5 h-5 text-white" />
+        </button>
+
+        {/* Image area */}
+        <div
+          className="relative w-full aspect-[16/9] select-none"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <Image
+            key={img.src}
+            src={img.src}
+            alt={`${project.title} ${img.label ?? ""}`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 768px"
+            priority
+          />
+
+          {/* Label badge */}
+          {img.label && (
+            <span className={`absolute top-3 left-3 px-2 py-1 rounded-md text-xs font-semibold ${
+              img.label === "Na" ? "bg-lime/80 text-black" : "bg-black/65 text-white"
+            }`}>
+              {img.label}
+            </span>
+          )}
+
+          {/* Counter */}
+          <span className="absolute bottom-3 right-3 px-2 py-1 rounded-md bg-black/60 text-white text-xs font-medium">
+            {current + 1} / {images.length}
+          </span>
+
+          {/* Prev button */}
+          <button
+            onClick={prev}
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 hover:bg-black flex items-center justify-center transition-colors"
+            aria-label="Vorige"
+          >
+            <ChevronLeft className="w-5 h-5 text-white" />
+          </button>
+
+          {/* Next button */}
+          <button
+            onClick={next}
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 hover:bg-black flex items-center justify-center transition-colors"
+            aria-label="Volgende"
+          >
+            <ChevronRight className="w-5 h-5 text-white" />
+          </button>
+        </div>
+
+        {/* Dot indicators */}
+        <div className="flex justify-center gap-2 pt-4 px-6">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                i === current ? "bg-lime w-4" : "bg-black/20"
+              }`}
+              aria-label={`Foto ${i + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Description */}
+        <div className="p-6 md:p-8 pt-4">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="px-3 py-1 rounded-full bg-lime/15 text-lime text-xs font-semibold uppercase tracking-wider">
+              {project.category}
+            </span>
+            <h3 className="text-black font-bold text-lg">{project.title}</h3>
+          </div>
+          <div className="relative pl-4 border-l-2 border-lime">
+            <p className="text-black/70 text-sm leading-relaxed">
+              {project.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
 }
 
 interface ModalProps {
@@ -23,13 +185,11 @@ function ProjectModal({ image, alt, project, onClose }: ModalProps) {
   const [visible, setVisible] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
 
-  // Fade in on mount
   useEffect(() => {
     const id = requestAnimationFrame(() => setVisible(true));
     return () => cancelAnimationFrame(id);
   }, []);
 
-  // Close on ESC
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") handleClose();
@@ -64,7 +224,6 @@ function ProjectModal({ image, alt, project, onClose }: ModalProps) {
           visible ? "opacity-100 scale-100" : "opacity-0 scale-95"
         }`}
       >
-        {/* Close button */}
         <button
           onClick={handleClose}
           className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/70 hover:bg-black flex items-center justify-center transition-colors"
@@ -72,8 +231,6 @@ function ProjectModal({ image, alt, project, onClose }: ModalProps) {
         >
           <X className="w-5 h-5 text-white" />
         </button>
-
-        {/* Image */}
         <div className="relative w-full aspect-[16/9]">
           <Image
             src={image}
@@ -84,8 +241,6 @@ function ProjectModal({ image, alt, project, onClose }: ModalProps) {
             priority
           />
         </div>
-
-        {/* Content */}
         <div className="p-6 md:p-8">
           <div className="flex items-center gap-3 mb-4">
             <span className="px-3 py-1 rounded-full bg-lime/15 text-lime text-xs font-semibold uppercase tracking-wider">
@@ -93,7 +248,6 @@ function ProjectModal({ image, alt, project, onClose }: ModalProps) {
             </span>
             <h3 className="text-black font-bold text-lg">{project.title}</h3>
           </div>
-
           <div className="relative pl-4 border-l-2 border-lime">
             <p className="text-black/70 text-sm leading-relaxed">
               {project.description}
@@ -108,10 +262,17 @@ function ProjectModal({ image, alt, project, onClose }: ModalProps) {
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const hasBeforeAfter = Boolean(project.beforeImage && project.afterImage);
+  const hasCarousel = Boolean(project.images?.length);
   const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null);
+  const [carouselStart, setCarouselStart] = useState<number | null>(null);
 
   const openModal = (src: string, alt: string) => {
-    if (project.description) setModalImage({ src, alt });
+    if (hasCarousel) {
+      const idx = project.images!.findIndex((img) => img.src === src);
+      setCarouselStart(idx >= 0 ? idx : 0);
+    } else if (project.description) {
+      setModalImage({ src, alt });
+    }
   };
 
   return (
@@ -136,7 +297,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 <span className="absolute top-3 left-3 px-2 py-1 rounded-md bg-black/65 text-white text-xs font-medium">
                   Voor
                 </span>
-                {project.description && (
+                {(project.description || hasCarousel) && (
                   <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-colors duration-200 flex items-center justify-center opacity-0 hover:opacity-100">
                     <ZoomIn className="w-8 h-8 text-white drop-shadow-lg" />
                   </div>
@@ -158,7 +319,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 <span className="absolute top-3 right-3 px-2 py-1 rounded-md bg-lime/80 text-black text-xs font-semibold">
                   Na
                 </span>
-                {project.description && (
+                {(project.description || hasCarousel) && (
                   <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-colors duration-200 flex items-center justify-center opacity-0 hover:opacity-100">
                     <ZoomIn className="w-8 h-8 text-white drop-shadow-lg" />
                   </div>
@@ -181,6 +342,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </div>
       </ScrollReveal>
+
+      {carouselStart !== null && (
+        <CarouselModal
+          project={project}
+          startIndex={carouselStart}
+          onClose={() => setCarouselStart(null)}
+        />
+      )}
 
       {modalImage && (
         <ProjectModal

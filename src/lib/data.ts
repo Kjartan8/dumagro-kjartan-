@@ -101,6 +101,11 @@ export const aboutContent = {
 };
 
 // ── Projects ────────────────────────────────────────────────
+export interface ProjectImage {
+  src: string;
+  label?: string;
+}
+
 export interface Project {
   title: string;
   category: string;
@@ -108,6 +113,7 @@ export interface Project {
   beforeImage?: string;
   afterImage?: string;
   description?: string;
+  images?: ProjectImage[];
 }
 
 export const projects: Project[] = [
@@ -119,6 +125,12 @@ export const projects: Project[] = [
     afterImage: "/IMG_1411.jpeg",
     description:
       "Bij deze klant hebben we het perceel volledig voorbereid voor een prachtig eindresultaat. We hebben de bestaande graszode verwijderd, het terrein opgehoogd en daarna zorgvuldig geëgaliseerd en genivelleerd. Het resultaat is een strak en vlak oppervlak, klaar voor verdere aanleg of beplanting.",
+    images: [
+      { src: "/IMG_1406.jpeg", label: "Voor" },
+      { src: "/IMG_1411.jpeg", label: "Na" },
+      { src: "/IMG_1403.jpeg", label: "Voor" },
+      { src: "/IMG_1405.jpeg", label: "Na" },
+    ],
   },
   {
     title: "Demo Project 1",

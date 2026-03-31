@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     "België",
     "aannemer",
   ],
+  icons: {
+    icon: "/favicon.jpg",
+  },
 };
 
 export default function RootLayout({

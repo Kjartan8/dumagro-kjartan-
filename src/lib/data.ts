@@ -129,7 +129,7 @@ export const projects: Project[] = [
       { src: "/IMG_1406.jpeg", label: "Voor" },
       { src: "/IMG_1411.jpeg", label: "Na" },
       { src: "/IMG_1403.jpeg", label: "Voor" },
-      { src: "/IMG_1405.jpeg", label: "Na" },
+      { src: "/IMG_1415.jpeg", label: "Na" },
     ],
   },
   {

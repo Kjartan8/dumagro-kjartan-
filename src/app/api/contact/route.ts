@@ -12,7 +12,7 @@ export async function POST(request: Request) {
   }
 
   const { error } = await resend.emails.send({
-    from: "noreply@dumagro.be",
+    from: "info@dumagro.be",
     to: "info@dumagro.be",
     replyTo: email,
     subject: `Nieuwe aanvraag van ${naam} — ${dienst}`,

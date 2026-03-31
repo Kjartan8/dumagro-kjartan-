@@ -194,7 +194,7 @@ export const footerDescription =
   "Dumagro is uw betrouwbare partner voor professionele grond- en afbraakwerken in België. Kwaliteit, veiligheid en vakmanschap staan bij ons centraal.";
 
 export const socialLinks = [
-  { label: "Facebook", href: "#" },
+  { label: "Facebook", href: "https://www.facebook.com/share/19uWS3fBMz/?mibextid=wwXIfr" },
   { label: "LinkedIn", href: "#" },
-  { label: "Instagram", href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/dumagro_be?igsh=MTVkY2lyMXlnbjA2Mg==" },
 ];

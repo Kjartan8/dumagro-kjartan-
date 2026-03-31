@@ -18,7 +18,7 @@ export const navLinks = [
 export const heroContent = {
   headline: "Grond- & Afbraakwerken",
   subheadline:
-    "Dumagro staat garant voor vakmanschap, veiligheid en efficiëntie bij elk project. Actief in Staden en omstreken in West-Vlaanderen — van grondverzet tot sloop.",
+    "Dumagro staat garant voor vakmanschap, veiligheid en efficiëntie bij elk project. Van grondverzet tot sloop — wij leveren kwaliteit.",
   ctaPrimary: "Plan uw afspraak",
   ctaSecondary: "Onze Diensten",
 };
@@ -88,8 +88,8 @@ export const aboutContent = {
   subtitle: "+8 jaar ervaring in grond- & afbraakwerken",
   paragraphs: [
     "Dumagro is meer dan een uitvoerder — het is het werk van een vakman met passie voor grond- en afbraakwerken.",
-    "Zaakvoerder Mathias staat zelf mee op de werf en volgt elk project van dichtbij op — van Staden tot Roeselare, Kortrijk, Ieper en Diksmuide.",
-    "Al van jongs af aan is hij actief in de sector en groeide zijn ervaring rechtstreeks vanuit de praktijk in de regio West-Vlaanderen. Wat begon als interesse, is uitgegroeid tot een echte passie voor het vak.",
+    "Zaakvoerder Mathias staat zelf mee op de werf en volgt elk project van dichtbij op.",
+    "Al van jongs af aan is hij actief in de sector en groeide zijn ervaring rechtstreeks vanuit de praktijk. Wat begon als interesse, is uitgegroeid tot een echte passie voor het vak.",
     "Die passie vertaalt zich vandaag in een persoonlijke aanpak, oog voor detail en een sterke focus op kwaliteit. Bij Dumagro weet u wie er op uw project werkt — en dat maakt het verschil.",
   ],
   values: [
@@ -191,7 +191,7 @@ export const serviceOptions = [
 
 // ── Footer ──────────────────────────────────────────────────
 export const footerDescription =
-  "Dumagro is uw betrouwbare partner voor professionele grond- en afbraakwerken in Staden, Roeselare, Kortrijk, Ieper, Diksmuide en heel West-Vlaanderen. Kwaliteit, veiligheid en vakmanschap staan bij ons centraal.";
+  "Dumagro is uw betrouwbare partner voor professionele grond- en afbraakwerken in België. Kwaliteit, veiligheid en vakmanschap staan bij ons centraal.";
 
 export const socialLinks = [
   { label: "Facebook", href: "#" },

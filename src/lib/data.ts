@@ -196,5 +196,5 @@ export const footerDescription =
 export const socialLinks = [
   { label: "Facebook", href: "https://www.facebook.com/share/19uWS3fBMz/?mibextid=wwXIfr" },
   { label: "LinkedIn", href: "#" },
-  { label: "Instagram", href: "https://www.instagram.com/dumagro_be?igsh=MTVkY2lyMXlnbjA2Mg==" },
+  { label: "Instagram", href: "https://www.instagram.com/dumagro_be/" },
 ];
